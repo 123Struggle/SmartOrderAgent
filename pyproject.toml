@@ -1,0 +1,37 @@
+[project]
+name = "smartorderagent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.143.0",
+    "httpx>=0.28.1",
+    "langchain>=1.4.4",
+    "langchain-deepseek>=1.1.1",
+    "langchain-huggingface>=1.2.3",
+    "langgraph>=1.2.14",
+    "langgraph-checkpoint-sqlite>=3.1.1",
+    "modelscope>=1.40.2",
+    "pydantic>=2.14.0",
+    "pymilvus>=3.0.2",
+    "pymysql>=1.2.3",
+    "pytest>=9.1.1",
+    "python-dotenv>=1.2.4",
+    "redis>=8.1.0",
+    "sentence-transformers>=6.1.0",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+smartorderagent = "smartorderagent:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: 需要 MySQL / Redis / Milvus / DeepSeek 等外部服务在线。CI 可加 -m \"not integration\" 跳过。",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"

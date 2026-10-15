@@ -1,0 +1,27 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+
+# 环境变量与密钥
+.env
+.env.*
+!.env.example
+
+# Local model weights and downloaded model assets
+/models/
+
+# 运行时产物（会话检查点、测试缓存、本地向量库）
+checkpoints.db
+checkpoints.db-*
+.pytest_cache/
+
+# Session credentials, drafts and process locks
+.runtime/
